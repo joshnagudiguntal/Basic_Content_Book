@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SQL Notes - Basic Content Book</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>📚 Basic Content Book</h2>
+
+        <div>
+            <a href="index.html">Home</a>
+            <button onclick="logoutUser()">Logout</button>
+        </div>
+    </nav>
+
+
+    <section class="container notes-page">
+
+        <h1>🗄️ SQL Notes</h1>
+
+        <p>
+            Basic SQL notes and commands for beginners.
+        </p>
+
+
+        <div class="topic">
+
+            <h2>1. What is SQL?</h2>
+
+            <p>
+                SQL stands for Structured Query Language.
+                It is used to store, retrieve, update and manage
+                data in relational databases.
+            </p>
+
+        </div>
+
+
+        <div class="topic">
+
+            <h2>2. What is a Database?</h2>
+
+            <p>
+                A database is an organized collection of data
+                that can be easily accessed and managed.
+            </p>
+
+        </div>
+
+
+        <div class="topic">
+
+            <h2>3. CREATE TABLE</h2>
+
+            <p>
+                The CREATE TABLE command is used to create a new table.
+            </p>
+
+            <pre>
+CREATE TABLE students (
+    id INT,
+    name VARCHAR(50),
+    age INT
+);
+            </pre>
+
+        </div>
+
+
+        <div class="topic">
+
+            <h2>4. INSERT</h2>
+
+            <p>
+                INSERT is used to add records into a table.
+            </p>
+
+            <pre>
+INSERT INTO students
+VALUES (1, 'Joshna', 20);
+            </pre>
+
+        </div>
+
+
+        <div class="topic">
+
+            <h2>5. SELECT</h2>
+
+            <p>
+                SELECT is used to retrieve data from a table.
+            </p>
+
+            <pre>
+SELECT * FROM students;
+            </pre>
+
+        </div>
+
+
+        <div class="topic">
+
+            <h2>6. UPDATE</h2>
+
+            <p>
+                UPDATE is used to modify existing records.
+            </p>
+
+            <pre>
+UPDATE students
+SET age = 21
+WHERE id = 1;
+            </pre>
+
+        </div>
+
+
+        <div class="topic">
+
+            <h2>7. DELETE</h2>
+
+            <p>
+                DELETE is used to remove records from a table.
+            </p>
+
+            <pre>
+DELETE FROM students
+WHERE id = 1;
+            </pre>
+
+        </div>
+
+
+        <div class="topic">
+
+            <h2>8. Important SQL Commands</h2>
+
+            <ul>
+                <li>CREATE – Create database objects</li>
+                <li>INSERT – Add data</li>
+                <li>SELECT – Retrieve data</li>
+                <li>UPDATE – Modify data</li>
+                <li>DELETE – Remove data</li>
+                <li>DROP – Remove database objects</li>
+            </ul>
+
+        </div>
+
+
+        <a href="index.html" class="button">
+            ← Back to Home
+        </a>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

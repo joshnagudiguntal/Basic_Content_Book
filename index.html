@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Basic Content Book</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <h2>📚 Basic Content Book</h2>
+
+        <div>
+    <a href="#">Home</a>
+    <a href="#add-content">Add Content</a>
+    <a href="#contents">My Contents</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+    <button onclick="logoutUser()">Logout</button>
+</div>
+    </nav>
+
+
+    <!-- Home Section -->
+    <section class="home">
+
+        <h1>Welcome to Basic Content Book</h1>
+
+        <p>
+            Create, store and manage your useful content
+            in one simple place.
+        </p>
+
+        <a href="#add-content" class="button">
+            Add Content
+        </a>
+        <div class="home-features">
+
+    <div class="home-feature">
+        <div class="feature-icon">📝</div>
+        <h3>Create Content</h3>
+        <p>Create and save your useful notes easily.</p>
+    </div>
+
+    <div class="home-feature">
+        <div class="feature-icon">🔍</div>
+        <h3>Find Easily</h3>
+        <p>Search and filter your saved content quickly.</p>
+    </div>
+
+    <div class="home-feature">
+        <div class="feature-icon">📚</div>
+        <h3>Manage Content</h3>
+        <p>Edit or delete your content whenever you need.</p>
+    </div>
+
+</div>
+<!-- Study Notes Section -->
+
+<div class="study-notes">
+
+    <h2>📚 Study Notes</h2>
+
+    <p>Choose a subject to read the notes.</p>
+
+    <div class="notes-grid">
+
+        <a href="python.html" class="note-card">
+            <h3>🐍 Python</h3>
+            <p>Python programming notes and concepts.</p>
+        </a>
+
+        <a href="java.html" class="note-card">
+            <h3>☕ Java</h3>
+            <p>Java programming notes and concepts.</p>
+        </a>
+
+        <a href="sql.html" class="note-card">
+            <h3>🗄️ SQL</h3>
+            <p>SQL database notes and queries.</p>
+        </a>
+
+        <a href="c.html" class="note-card">
+            <h3>💻 C Programming</h3>
+            <p>C programming notes and examples.</p>
+        </a>
+
+        <a href="aiml.html" class="note-card">
+            <h3>🤖 AI & ML</h3>
+            <p>Artificial Intelligence and Machine Learning notes.</p>
+        </a>
+
+    </div>
+
+</div>
+
+    </section>
+
+
+    <!-- Add Content Section -->
+    <section id="add-content" class="container">
+
+        <h2>Add New Content</h2>
+
+        <input
+            type="text"
+            id="title"
+            placeholder="Enter content title"
+        >
+
+        <select id="category">
+
+    <option value="">Select Category</option>
+
+    <option value="Programming">
+        Programming
+    </option>
+
+    <option value="Technology">
+        Technology
+    </option>
+
+    <option value="Education">
+        Education
+    </option>
+
+    <option value="AI & ML">
+        AI & ML
+    </option>
+
+    <option value="Interview">
+        Interview
+    </option>
+
+    <option value="Personal Notes">
+        Personal Notes
+    </option>
+
+    <option value="Other">
+        Other
+    </option>
+
+</select>
+
+        <textarea
+            id="content"
+            placeholder="Write your content here..."
+        ></textarea>
+
+        <button onclick="addContent()">
+            Save Content
+        </button>
+
+    </section>
+
+
+    <!-- Contents Section -->
+    <section id="contents" class="container">
+
+    <h2>My Contents</h2>
+    <p id="contentCount">Total Contents: 0</p>
+
+    <div class="filter-area">
+
+    <input
+        type="text"
+        id="search"
+        placeholder="🔍 Search content..."
+        onkeyup="searchContent()"
+    >
+
+    <select id="filterCategory" onchange="filterContent()">
+        <option value="">All Categories</option>
+        <option value="Programming">Programming</option>
+        <option value="Technology">Technology</option>
+        <option value="Education">Education</option>
+        <option value="AI & ML">AI & ML</option>
+        <option value="Interview">Interview</option>
+        <option value="Personal Notes">Personal Notes</option>
+        <option value="Other">Other</option>
+    </select>
+    <button onclick="resetFilters()">Reset</button>
+
+</div>
+
+    <div id="contentList">
+
+        <div class="card">
+
+            <h3>Example: Python Basics</h3>
+
+            <p class="category">
+                Programming
+            </p>
+
+            <p class="content-text">
+                Python is a high-level programming language
+                used for developing different applications.
+            </p>
+
+            <button onclick="editContent(this)">
+                Edit
+            </button>
+
+            <button onclick="deleteContent(this)">
+                Delete
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- About Section -->
+<section id="about" class="container about">
+
+    <h2>About Basic Content Book</h2>
+
+    <p>
+        Basic Content Book is a simple digital notebook
+        that helps users create, store and manage their
+        useful content in one place.
+    </p>
+
+    <div class="features">
+
+        <div class="feature">
+            <h3>📝 Create</h3>
+            <p>Create and save your own content easily.</p>
+        </div>
+
+        <div class="feature">
+            <h3>🔍 Search</h3>
+            <p>Quickly search your saved content.</p>
+        </div>
+
+        <div class="feature">
+            <h3>✏️ Edit</h3>
+            <p>Update your content whenever you need.</p>
+        </div>
+
+        <div class="feature">
+            <h3>🗑️ Delete</h3>
+            <p>Remove content that you no longer need.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Footer -->
+<footer>
+
+    <h3>📚 Basic Content Book</h3>
+
+    <p>
+        Create • Store • Manage • Learn
+    </p>
+
+    <p>
+        © 2026 Basic Content Book. All Rights Reserved.
+    </p>
+
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>
