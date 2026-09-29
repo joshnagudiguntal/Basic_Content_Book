@@ -1,9 +1,13 @@
 // Load saved content when the page opens
 // Check Login
+// Check Login
+let currentPage = window.location.pathname.split("/").pop();
+
 if (
-    window.location.pathname.endsWith("index.html") ||
-    window.location.pathname === "/"
+    currentPage === "" ||
+    currentPage === "index.html"
 ) {
+
     let loggedIn = localStorage.getItem("loggedIn");
 
     if (loggedIn !== "true") {
