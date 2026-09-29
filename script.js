@@ -1,17 +1,26 @@
 // Load saved content when the page opens
 // Check Login
-// Check Login
+// Check Login and Registration
+
 let currentPage = window.location.pathname.split("/").pop();
 
-if (
-    currentPage === "" ||
-    currentPage === "index.html"
-) {
+if (currentPage === "" || currentPage === "index.html") {
 
+    let savedUser = localStorage.getItem("user");
     let loggedIn = localStorage.getItem("loggedIn");
 
-    if (loggedIn !== "true") {
+    // First-time user → Registration
+    if (!savedUser) {
+
+        window.location.href = "register.html";
+
+    }
+
+    // Registered but not logged in → Login
+    else if (loggedIn !== "true") {
+
         window.location.href = "login.html";
+
     }
 }
 window.onload = function () {
